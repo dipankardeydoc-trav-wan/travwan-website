@@ -1,0 +1,784 @@
+/* =========================================
+   Trav-Wan Trips
+   Main Stylesheet (Version 2)
+   Cleaned & Organized
+========================================= */
+
+/* ===============================
+   1. ROOT VARIABLES
+=================================*/
+:root{
+    --primary:#0d2f63;
+    --secondary:#20c997;
+    --accent:#fdb813;
+    --dark:#212529;
+    --light:#f8f9fa;
+    --white:#ffffff;
+    --text:#666666;
+    --shadow:0 12px 30px rgba(0,0,0,.08);
+    --shadow-hover:0 25px 50px rgba(0,0,0,.18);
+    --radius:20px;
+    --transition:.35s ease;
+}
+
+/* ===============================
+   2. RESET
+=================================*/
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Open Sans',sans-serif;
+    color:var(--dark);
+    background:var(--white);
+}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+h1,h2,h3,h4,h5,h6{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+}
+section{padding:100px 0}
+.container{max-width:1200px}
+
+/* ===============================
+   3. COMMON TITLES
+=================================*/
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+.section-subtitle{
+    text-align:center;
+    color:var(--text);
+    font-size:1.1rem;
+    margin-bottom:60px;
+}
+
+/* ===============================
+   4. NAVBAR
+=================================*/
+.navbar{
+    background:transparent;
+    padding:18px 0;
+    transition:.4s;
+    z-index:9999;
+}
+.navbar-brand img{height:150px;transition:.4s}
+.navbar-collapse{justify-content:center}
+.navbar-nav .nav-link{
+    color:#fff!important;
+    font-weight:600;
+    margin:0 12px;
+    transition:.3s;
+}
+.navbar-nav .nav-link:hover{color:var(--accent)!important}
+.navbar.scrolled{
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+    padding:10px 0;
+}
+.navbar.scrolled .nav-link{color:var(--dark)!important}
+.navbar.scrolled .nav-link:hover{color:var(--accent)!important}
+.navbar.scrolled .navbar-brand img{height:80px}
+
+/* ===============================
+   5. HERO
+=================================*/
+.hero{
+    padding:0;
+    height:100vh;
+    background:url("../images/hero/slide1.png") center/cover no-repeat;
+    position:relative;
+    overflow:hidden;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+}
+.hero-content{
+    position:absolute;
+    top:60%;
+    left:14%;
+    transform:translateY(-50%);
+    z-index:2;
+    max-width:700px;
+}
+.hero-content h1{
+    color:#fff;
+    font-size:4.3rem;
+    line-height:1.1;
+    margin-bottom:25px;
+    text-shadow:0 8px 30px rgba(0,0,0,.45);
+}
+.hero-content p{
+    color:rgba(255,255,255,.92);
+    font-size:1.45rem;
+    margin-bottom:40px;
+}
+.hero-buttons{display:flex;gap:25px}
+.hero-btn,.hero-btn-outline{
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+}
+.hero-btn{
+    background:var(--accent);
+    color:var(--primary);
+}
+.hero-btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+}
+.hero-btn:hover,.hero-btn-outline:hover{
+    transform:translateY(-3px);
+}
+.hero-btn-outline:hover{
+    background:#fff;
+    color:var(--primary);
+}
+
+/* ===============================
+   6. CONTENT SECTIONS
+=================================*/
+.about{padding:140px 0 100px;background:#fff}
+.about h2,
+.services h2,
+.destinations h2,
+.why-us h2,
+.packages h2,
+.testimonials h2,
+.contact h2{
+    text-align:center;
+    font-size:3rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+.about .row h2{text-align:left}
+.about p{font-size:1.15rem;line-height:1.9;color:#555}
+.about-image img{
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-hover);
+    transition:var(--transition);
+}
+.about-image img:hover{transform:scale(1.03)}
+
+.services,.why-us,.testimonials{background:var(--light)}
+.destinations,.packages,.contact{background:#fff}
+
+.service-card,.feature-box,.testimonial-card,.package-card,.destination-card{
+    background:#fff;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+    overflow:hidden;
+}
+.service-card:hover,
+.feature-box:hover,
+.testimonial-card:hover,
+.package-card:hover,
+.destination-card:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--shadow-hover);
+}
+
+.service-card,.feature-box,.testimonial-card{padding:35px}
+.feature-box{text-align:center}
+.service-card i,.feature-box i{
+    color:var(--accent);
+}
+.destination-card img,
+.package-card img{
+    width:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+.destination-card img{height:250px}
+.package-card img{height:220px}
+.destination-card:hover img,
+.package-card:hover img{
+    transform:scale(1.08);
+}
+.destination-content,.package-content{padding:25px}
+.package-btn{
+    display:block;
+    text-align:center;
+    background:var(--accent);
+    color:var(--primary);
+    padding:14px;
+    border-radius:50px;
+    font-weight:700;
+}
+.package-btn:hover{
+    background:var(--primary);
+    color:#fff;
+}
+.package-price{
+    margin:25px 0;
+    color:var(--text);
+}
+.package-price span{
+    display:block;
+    font-size:2rem;
+    color:var(--primary);
+    font-weight:700;
+}
+.package-note{
+    max-width:900px;
+    margin:40px auto 0;
+    text-align:center;
+    color:var(--text);
+    font-style:italic;
+}/* =========================================
+   Service Buttons
+========================================= */
+
+.service-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:10px 22px;
+
+    background:var(--accent);
+
+    color:var(--primary);
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+.service-btn:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===============================
+   7. STATS
+=================================*/
+.stats{
+    background:var(--primary);
+}
+.stat-box{
+    color:#fff;
+    transition:.3s;
+}
+.stat-box:hover{transform:translateY(-8px)}
+.stat-box i{
+    font-size:3rem;
+    color:var(--accent);
+    margin-bottom:20px;
+}
+.stat-box h2{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+.stat-box p{color:#e8e8e8}
+
+/* ===============================
+   8. CONTACT
+=================================*/
+.contact-info,.contact-form{
+    background:#fff;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:35px;
+}
+.info-item{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    align-items:flex-start;
+}
+.info-item i{
+    color:var(--accent);
+    font-size:1.2rem;
+    margin-top:3px;
+}
+.form-control,.form-select{
+    border-radius:12px;
+    padding:12px;
+}/*=========================================
+FOOTER
+=========================================*/
+
+.footer{
+
+    background:#0d2f63;
+
+    color:#ffffff;
+
+    padding:70px 0 20px;
+
+}
+
+.footer img{
+
+    height:70px;
+
+}
+
+.footer h4{
+
+    color:#FDB813;
+
+    font-size:1.4rem;
+
+    margin-bottom:25px;
+
+}
+
+.footer p{
+
+    color:#d9d9d9;
+
+    line-height:1.9;
+
+}
+
+.footer-links{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:#d9d9d9;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#FDB813;
+
+    padding-left:6px;
+
+}.package-note{
+    margin-top: 15px;
+    background: #fff8e5;
+    border-left: 5px solid #f4b400;
+    padding: 18px 22px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.package-note strong{
+    color: #0b3b78;
+}.explore-btn{
+    background:#0b3b78;
+    border:none;
+    padding:14px 35px;
+    font-size:1rem;
+    font-weight:600;
+    border-radius:50px;
+    transition:0.3s ease;
+}
+
+.explore-btn:hover{
+    background:#f4b400;
+    color:#000;
+    transform:translateY(-3px);
+}
+
+    /* ==========================
+   Footer Social Icons
+========================== */
+
+.social-icons a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    margin-right:10px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+    color:#0d3b78;
+
+    text-decoration:none;
+
+    transition:all .3s ease;
+}
+
+.social-icons a:hover{
+
+    background:#ffc107;
+    color:#000;
+
+    transform:translateY(-3px);
+
+}/* ===============================
+   Floating WhatsApp Button
+================================= */
+
+.whatsapp-float{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    background: #25D366;
+    color: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    z-index: 9999;
+
+    transition: all .3s ease;
+}
+
+.whatsapp-float:hover{
+    background:#1ebe5d;
+    color:white;
+    transform:scale(1.1);
+}@keyframes whatsappPulse {
+
+    0%{
+        transform:scale(1);
+        box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    50%{
+        transform:scale(1.08);
+        box-shadow:0 10px 28px rgba(37,211,102,0.45);
+    }
+
+    100%{
+        transform:scale(1);
+        box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    }
+
+}
+
+.whatsapp-float{
+    animation:whatsappPulse 2.2s infinite;
+}/* ===============================
+   Back To Top Button
+================================= */
+
+#backToTop{
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #0b3b78;
+    color: #fff;
+
+    font-size: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all .3s ease;
+
+    z-index: 9998;
+}
+
+#backToTop:hover{
+
+    background:#f4b400;
+    color:#000;
+
+    transform:translateY(-4px);
+
+}
+
+#backToTop{
+
+    opacity: 1;
+    visibility: visible;
+
+}/*=================================
+TRAVEL GALLERY
+=================================*/
+
+.travel-gallery{
+
+    padding:90px 0;
+
+    background:#f7fbff;
+
+    overflow:hidden;
+
+}
+
+.travel-gallery h2{
+
+    text-align:center;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.travel-gallery .section-subtitle{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.gallery-row{
+
+    overflow:hidden;
+
+    margin:25px 0;
+
+}
+
+.gallery-track{
+
+    display:flex;
+
+    width:max-content;
+
+    animation:scrollLeft 40s linear infinite;
+
+}
+
+.reverse .gallery-track{
+
+    animation:scrollRight 45s linear infinite;
+
+}
+
+.gallery-track img{
+
+    width:340px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin:0 12px;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+
+.gallery-track img:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.30);
+
+}
+
+.gallery-row:hover .gallery-track{
+
+    animation-play-state:paused;
+
+}
+
+@keyframes scrollLeft{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+@keyframes scrollRight{
+
+    from{
+
+        transform:translateX(-50%);
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.gallery-track img{
+
+    width:220px;
+
+    height:150px;
+
+}
+
+}/* Why Choose Us */
+
+.why-list{
+
+    list-style:none;
+    padding:0;
+    margin:0;
+
+}
+
+.why-list li{
+
+    padding:12px 0;
+    font-size:17px;
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.why-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+.why-list i{
+
+    color:#f4b400;
+    margin-right:12px;
+}/* ==========================
+   Why Choose Us
+========================== */
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin:35px 0;
+
+}
+
+.feature-card{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:18px;
+
+    background:#f8f9fc;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+    cursor:default;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.feature-card i{
+
+    font-size:28px;
+
+    color:#f4b400;
+
+    width:40px;
+
+    text-align:center;
+
+}
+
+.feature-card span{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#17376e;
+
+}.hero-action-btn{
+    width:190px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:30px;
+
+    font-weight:600;
+}

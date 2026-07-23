@@ -1,0 +1,14 @@
+/* Responsive Styles */
+
+/* We will add media queries here later */
+@media (max-width:768px){
+
+.hero-content h1{
+
+    font-size:3rem;
+
+    line-height:1.15;
+
+}
+
+}
